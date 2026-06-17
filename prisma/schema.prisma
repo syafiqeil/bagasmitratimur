@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Admin User Table
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
+}
+
+// Single row table to hold all settings
+model SiteContent {
+  id Int @id @default(1)
+
+  // Homepage: Hero Section
+  homeHeroTitle   String @default("Wujudkan Rumah Impian di Perumahan Nyarong Mandiri")
+  homeHeroDesc    String @default("Rencanakan masa depan Anda dengan hunian asri dan nyaman dengan lingkungan yang menenangkan. Kami siap membantu wujudkan hunian impian Anda.") @db.Text
+  homeHeroImg     String @default("/image/fotoRumahHero.jpeg")
+
+  // Homepage: Keunggulan (About)
+  homeAboutTitle  String @default("Keunggulan Kami")
+  homeAboutSub    String @default("Dapatkan kenyamanan dan harga terjangkau. Temukan rumah impian Anda bersama kami tanpa keraguan finansial.") @db.Text
+  
+  aboutCard1Title String @default("Konsep Ramah Lingkungan")
+  aboutCard1Desc  String @default("Desain yang menyatu dengan alam. Menghadirkan keseimbangan terbaik antara hunian dan alam sekitar untuk kenyamanan optimal.") @db.Text
+  
+  aboutCard2Title String @default("Keamanan Terjamin")
+  aboutCard2Desc  String @default("Sistem keamanan 24 Jam dengan CCTV yang ketat menjaga rumah Anda dengan pasti.") @db.Text
+  
+  aboutCard3Title String @default("Harga Terjangkau")
+  aboutCard3Desc  String @default("Mulai dari tipe termurah, dapatkan hunian impian dengan kemudahan pembayaran.") @db.Text
+  
+  aboutCard4Title String @default("Kemitraan Bank Luas")
+  aboutCard4Desc  String @default("Bekerja sama dengan berbagai Bank ternama untuk memudahkan proses persetujuan dan mencairkan dana.") @db.Text
+
+  // Homepage: 3. Hunian Ideal: Type 36 Section
+  idealTypeLabel  String @default("Type 36/90")
+  idealTitle      String @default("Hunian Ideal: Type 36")
+  idealDesc       String @default("Menawarkan hunian minimalis dan nyaman dan ruang luar dengan tata ruang yang dirancang khusus untuk kenyamanan dan privasi Anda dan keluarga.") @db.Text
+  idealBed        String @default("2 Kamar Tidur")
+  idealLiving     String @default("1 Ruang Tamu")
+  idealCarport    String @default("1 Carport")
+  idealArea       String @default("Luas Tanah 90m²")
+  idealInfo       String @default("Terdapat sisa tanah di bagian depan dan belakang yang dapat dimanfaatkan untuk taman atau perluasan bangunan.") @db.Text
+  idealImage      String @default("/image/fotoRumahNyaong.jpeg")
+
+  // Product Page
+  prodHeroTitle   String @default("Rumah Type 36")
+  prodHeroSub     String @default("Kompleks Perumahan Nyarong Mandiri")
+  prodHeroDesc    String @default("Rumah Type 36 di Perumahan Nyarong Mandiri menawarkan keseimbangan sempurna antara fungsionalitas hunian modern dan keasrian alam.") @db.Text
+  
+  prodSpecArea    String @default("± 198 m2")
+  prodSpecLoc     String @default("Desa Kuala Dua")
+  prodSpecSt      String @default("Jln. Sumber Maju")
+
+  prodHeroImg     String @default("/image/product_hero.png")
+  prodSideImg     String @default("/image/product_side.png")
+  prodSitePlanImg String @default("/image/product_siteplan.png")
+
+  prodVis1Img     String @default("/image/product_vis_1.png")
+  prodVis1Title   String @default("Kualitas Bangunan")
+  prodVis1Desc    String @default("Material pilihan untuk daya tahan dan estetika maksimal.") @db.Text
+  
+  prodVis2Img     String @default("/image/product_vis_2.png")
+  prodVis2Title   String @default("Lingkungan Asri")
+  prodVis2Desc    String @default("Kawasan hijau yang dirancang untuk kenyamanan keluarga.") @db.Text
+
+  prodVis3Img     String @default("/image/product_vis_3.png")
+  prodVis3Title   String @default("Tata Kelola Lahan")
+  prodVis3Desc    String @default("Perencanaan wilayah yang efisien dan tertata rapi.") @db.Text
+
+  updatedAt       DateTime @updatedAt
+}
