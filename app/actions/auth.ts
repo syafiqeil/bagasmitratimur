@@ -37,10 +37,11 @@ export async function registerAdmin(formData: FormData) {
         password: hashedPassword,
       },
     });
-    redirect("/login");
   } catch (error) {
     return { error: "Terjadi kesalahan saat mendaftar." };
   }
+
+  redirect("/login");
 }
 
 export async function loginAdmin(formData: FormData) {
