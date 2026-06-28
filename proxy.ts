@@ -4,7 +4,7 @@ import { jwtVerify } from "jose";
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET || "BagasMitraTimurSecretKey123");
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Hanya lindungi route yang dimulai dengan /admin
   if (request.nextUrl.pathname.startsWith("/admin")) {
     const token = request.cookies.get("admin_session")?.value;
