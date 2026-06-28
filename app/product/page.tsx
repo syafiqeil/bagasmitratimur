@@ -121,10 +121,10 @@ export default async function ProductPage() {
               </p>
               
               <div className="flex flex-col gap-3 relative z-10">
-                <button className="bg-white text-[#244926] w-full py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                <a href="https://wa.me/6285332380415" target="_blank" rel="noopener noreferrer" className="bg-white text-[#244926] w-full py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 shadow-sm">
                   <MessageCircleIcon className="w-4 h-4" />
                   WhatsApp Sekarang
-                </button>
+                </a>
                 <button className="bg-transparent border border-white/40 text-white w-full py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                   <DownloadIcon className="w-4 h-4" />
                   Unduh Brosur PDF

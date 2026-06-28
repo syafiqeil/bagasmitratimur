@@ -55,9 +55,6 @@ export default async function Home() {
         
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 h-full flex flex-col justify-center">
-          <div className="inline-block bg-[#EAF0E6] text-[#244926] font-semibold text-xs px-4 py-2 rounded-md mb-6 w-max">
-            Perumahan Nyarong Mandiri
-          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#244926] leading-[1.1] mb-6 whitespace-pre-line">
             {content?.homeHeroTitle}
           </h1>
@@ -65,12 +62,12 @@ export default async function Home() {
             {content?.homeHeroDesc}
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-[#244926] text-white px-8 py-3 rounded-md font-medium hover:bg-[#1d3d1f] transition-colors shadow-md">
+            <a href="https://wa.me/6285332380415" target="_blank" rel="noopener noreferrer" className="bg-[#244926] text-white px-8 py-3 rounded-md font-medium hover:bg-[#1d3d1f] transition-colors shadow-md">
               Pesan Sekarang
-            </button>
-            <button className="bg-white/50 backdrop-blur-sm text-[#244926] border-2 border-[#244926] px-8 py-3 rounded-md font-medium hover:bg-white transition-colors">
+            </a>
+            <a href="https://wa.me/6285332380415" target="_blank" rel="noopener noreferrer" className="bg-white/50 backdrop-blur-sm text-[#244926] border-2 border-[#244926] px-8 py-3 rounded-md font-medium hover:bg-white transition-colors">
               Hubungi Kami
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -200,10 +197,10 @@ export default async function Home() {
                 </p>
               </div>
 
-              <button className="bg-[#244926] text-white px-8 py-3.5 rounded-md font-medium hover:bg-[#1d3d1f] transition-colors flex items-center gap-2 shadow-md">
+              <a href="/product" className="bg-[#244926] text-white px-8 py-3.5 rounded-md font-medium hover:bg-[#1d3d1f] transition-colors inline-flex items-center gap-2 shadow-md w-max">
                 <DocumentIcon className="w-4 h-4" />
                 Lihat Detail Unit
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -245,7 +242,7 @@ export default async function Home() {
           </div>
 
           {/* Right: Map Graphic Image */}
-          <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-full">
+          <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-full overflow-hidden">
             {/* Filter overlay to make image dark and fit the theme */}
             <div className="absolute inset-0 bg-[#1A1A1A]/80 mix-blend-color z-10"></div>
             <div className="absolute inset-0 bg-[#244926]/30 mix-blend-multiply z-10"></div>
@@ -254,7 +251,7 @@ export default async function Home() {
             <img 
               src="../image/lokasiTanah.png" 
               alt="Peta Lokasi" 
-              className="w-full h-full object-center opacity-60 mix-blend-screen grayscale"
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-60 mix-blend-screen grayscale scale-[1.3] md:scale-[1.5]"
             />
           </div>
         </div>
@@ -262,7 +259,7 @@ export default async function Home() {
 
       {/* 5. CTA Section */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
-        <div className="bg-gradient-to-br from-[#EAF0E6] to-[#D5E2D0] rounded-3xl p-12 text-center shadow-lg border border-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#EAF0E6] to-[#D5E2D0] rounded-3xl p-12 text-center shadow-lg relative overflow-hidden">
           {/* Subtle glow effect */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-32 bg-white/60 blur-3xl rounded-full"></div>
           
@@ -273,10 +270,10 @@ export default async function Home() {
             <p className="text-[#244926]/70 mb-8 max-w-xl mx-auto font-medium">
               Konsultasikan sekarang dan dapatkan unit terbaik Anda. Tim kami selalu sedia untuk menjawab setiap pertanyaan Anda.
             </p>
-            <button className="bg-[#244926] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1d3d1f] transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-xl shadow-[#244926]/30">
+            <a href="https://wa.me/6285332380415" target="_blank" rel="noopener noreferrer" className="bg-[#244926] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1d3d1f] transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-xl shadow-[#244926]/30">
               <MessageCircleIcon className="w-5 h-5" />
               Hubungi via WhatsApp
-            </button>
+            </a>
           </div>
         </div>
       </section>
