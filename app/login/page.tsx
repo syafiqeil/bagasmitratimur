@@ -67,9 +67,6 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-6 text-center text-sm text-gray-500">
-          Belum punya akun admin? <Link href="/register" className="text-[#244926] font-semibold hover:underline">Daftar di sini</Link>
-        </div>
       </div>
     </div>
   );
