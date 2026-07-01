@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
     const apiKey = process.env.API_URL;
     if (!apiKey) {
-      return NextResponse.json({ success: false, error: "API_URL (ImgBB API Key) is not configured" });
+      return NextResponse.json({ success: false, error: "API_URL (ImgBB API Key) is not configured" }, { status: 400 });
     }
 
     // Menyiapkan data untuk dikirim ke ImgBB
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, url: result.data.url });
     } else {
       console.error("ImgBB upload error:", result);
-      return NextResponse.json({ success: false, error: result.error?.message || "Gagal mengunggah ke ImgBB" });
+      return NextResponse.json({ success: false, error: result.error?.message || "Gagal mengunggah ke ImgBB" }, { status: 400 });
     }
   } catch (error) {
     console.error("Upload error:", error);
